@@ -1,0 +1,182 @@
+html, body {
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+}
+
+/* css as usual */
+th, td {
+    font-size: 0.5em;
+    padding: 2px;
+}
+
+.footer{
+    padding: 2px 0px 2px 0px;
+}
+
+/* condition for screen size minimum of 500px */
+@media (min-width:500px) {
+  /* your conditional / responsive CSS inside this condition */
+  th, td {
+    font-size: 0.85em;
+    padding: 5px;
+  }
+
+  .footer{
+    padding: 5px 0px 5px 0x;
+  }
+}
+
+th {
+    border: 1px solid rgb(51, 51, 51);
+    text-align: center;
+    vertical-align:middle;
+    background-color: #f0fffa;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#fundCountSpan, #totalAUMSpan{
+    font-size:1.15em;
+    color: rgb(0, 183, 255);
+    font-weight:bold;
+}
+
+#databaseDiv{
+    border-top: 2px solid rgb(51, 51, 51);
+    border-bottom: 2px solid rgb(51, 51, 51);
+    padding:1%;
+    background-color:white;
+}
+
+#mainTable{
+    margin: auto;
+
+    margin-top:3px;
+    border-collapse: collapse;
+
+    overflow-x:scroll;
+    width:95%;
+    max-width:950px;
+
+    overflow-y:scroll;
+    height:40%;
+    max-height:500px;
+
+    display:block;
+}
+
+#bottomTable {
+    margin: auto;
+    margin-top:3px;
+    margin-bottom:3px;
+    border-collapse: collapse;
+
+    overflow-x:scroll;
+    width:95%;
+    max-width:950px;
+
+    overflow-y:scroll;
+    height:40%;
+    max-height:400px;
+
+    display:block;
+    table-layout: fixed;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;  
+    background-color: #ffffff; 
+}
+
+
+.footer{
+    cursor:auto;
+    background-color: #f0fffa;
+    font-weight:normal;
+}
+
+.footerTableDiv{
+    font-size:0;
+    text-align: center;
+    vertical-align:middle;
+    display:inline;
+    margin:auto;
+}
+
+#bottomTable {
+    scrollbar-height: none; /* Firefox */
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+#bottomTable::-webkit-scrollbar { /* WebKit */
+    height: 0px;
+}
+
+
+td {
+    border-left: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(51, 51, 51);
+    border-bottom: 1px solid rgb(51, 51, 51);
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+tr:nth-child(odd) {
+    background-color: rgb(240, 240, 240);
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+
+.oddRow td{
+    background-color: rgb(242, 255, 255);   
+}
+
+
+i {
+    color: rgb(190, 190, 190);
+    font-size:1.4em;
+}
+
+.activeArrow {
+    color: rgb(0, 183, 255);
+    font-size:1.4em;
+}
+  
+
+
+#providerPieChartDiv, #assetCategoryPieChartDiv, #MERDistributionChartDiv, #oneYearDistributionChartDiv, #fiveYearDistributionChartDiv {
+    padding:1%;
+    border: 1px solid black;
+    background-color: white;
+    position:relative;
+    height:50vh;
+    width:92vw;
+    max-width: 900px;
+    max-height: 300px;
+    margin: auto;
+    margin-top:2%;
+    margin-bottom:2%;
+}

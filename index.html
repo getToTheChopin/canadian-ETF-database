@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <h1>The Measured Database of Canadian Index Funds</h1>
+
+    <p>This database keeps track of the vast majority of Canadian index funds. Key metrics such as total assets under management (AUM), management expense ratios (MER), and performance / yield data are included when available.</p>
+    &nbsp;
+    <p id="introPara"></p>
+
+    &nbsp;
+    <h2>Index Fund Providers</h2>
+
+    <div id="providerPieChartDiv">
+        <canvas id="providerPieChart"></canvas>
+    </div>
+
+    <p>As it stands, this database includes funds from 6 of the top providers in Canada, as shown in the chart above. According to statistics from the Canadian ETF Association, there are a total of 33 fund providers in Canada, with total AUM of $156.8B. As such, this database covers ~87% of the total Canadian market in terms of AUM.</p>
+    <p>Given the manual work required to pull data from the long tail of index fund providers, the remaining 27 providers have been excluded from this analysis. I'll do my best to include more fund providers in future updates to this database.</p>
+
+    &nbsp;
+    <h2>Asset Class Summary</h2>
+
+    <div id="assetCategoryPieChartDiv">
+        <canvas id="assetCategoryPieChart"></canvas>
+    </div>
+
+    <p>The lion's share of assets are invested in equity funds (69%) and fixed income funds (30%).</p>
+    <p>While 'Asset Allocation' funds (which invest in a mix and equity and fixed income assets, with automatic-rebalancing) only manage $1B of assets today, I'd expect this number to grow significantly in the coming years. These funds offer investors an easy path to sticking with a target asset allocation without needing to manually calculate weightings and execute additional trades.</p>
+    <p>Funds which primarily invest in commodities, alternative assets (e.g., hedge funds), and currency are just a brief blip on the screen.</p>
+
+    &nbsp;
+    <h2>1-Year Return Distribution</h2>
+
+    <div id="oneYearDistributionChartDiv">
+        <canvas id="oneYearDistributionChart"></canvas>
+    </div>
+    
+    &nbsp;
+    <h2>5-Year Return Distribution</h2>
+
+    <div id="fiveYearDistributionChartDiv">
+        <canvas id="fiveYearDistributionChart"></canvas>
+    </div>
+
+    &nbsp;
+    <h2>Management Expense Ratio (MER) Distribution</h2>
+
+    <div id="MERDistributionChartDiv">
+        <canvas id="MERDistributionChart"></canvas>
+    </div>
+
+    <p>Turning to the annual fees charged by Canadian index funds, we can see a bi-modal distribution. There's a clump of funds charging between 0.2%-0.3%, and another large group of funds charging 0.6%-0.7%.</p>
+    <p>Here's hoping that the fees continue to drop, following the lead of our neighbour to the south, where funds with zero management fees have recently been introduced.</p>
+
+    &nbsp;
+    <h2>Master Database of Canadian Index Funds</h2>
+    <p>And without further ado, you can find the full database of Canadian index funds below. Click on any of the column headers to sort the table by that metric (in ascending or descending order).</p>
+
+    <div id="databaseDiv">
+
+        <div id="mainTableDiv">
+            <table id="mainTable" onscroll="OnScroll(this)">
+
+                <thead>
+                    <th id="header1">Fund Provider <i id="arrow1" class="fas fa-sort"></i></th>
+                    <th id="header2">Fund Name <i id="arrow2" class="fas fa-sort"></i></th>
+                    <th id="header3">Ticker <i id="arrow3" class="fas fa-sort"></i></th>
+                    <th id="header4">Asset Category <i id="arrow4" class="fas fa-sort"></i></th>
+                    <th id="header5">Assets Under Management ($M) <i id="arrow5" class="fas fa-sort"></i></th>
+                    <th id="header6">Management Expense Ratio (%) <i id="arrow6" class="fas fa-sort"></i></th>
+                    <th id="header7">1-Year Return (%) <i id="arrow7" class="fas fa-sort"></i></th>
+                    <th id="header8">5-Year Return (%) <i id="arrow8" class="fas fa-sort"></i></th>
+                    <th id="header9">10-Year Return (%) <i id="arrow9" class="fas fa-sort"></i></th>
+                    <th id="header10">Return Since Inception (%) <i id="arrow10" class="fas fa-sort"></i></th>
+                    <th id="header11">Yield (%) <i id="arrow11" class="fas fa-sort"></i></th>
+                    <th id="header12">Inception Date <i id="arrow12" class="fas fa-sort"></i></th>
+                </thead>
+
+            </table>
+        </div>
+
+        <div id="bottomTableDiv">
+            <table id="bottomTable" onscroll="OnScroll2(this)">
+                <thead>
+                    <th class="footer" id="footer1">Fund Provider</th>
+                    <th class="footer" id="footer2">Fund Name</th>
+                    <th class="footer" id="footer3">Ticker</th>
+                    <th class="footer" id="footer4">Asset Category</th>
+                    <th class="footer" id="footer5">Assets Under Management ($M)</th>
+                    <th class="footer" id="footer6">Management Expense Ratio (%)</th>
+                    <th class="footer" id="footer7">1-Year Return (%)</th>
+                    <th class="footer" id="footer8">5-Year Return (%)</th>
+                    <th class="footer" id="footer9">10-Year Return (%)</th>
+                    <th class="footer" id="footer10">Return Since Inception (%)</th>
+                    <th class="footer" id="footer11">Yield (%)</th>
+                    <th class="footer" id="footer12">Inception Date</th>
+                </thead>
+            </table>
+        </div>
+    
+    </div>
+
+    &nbsp;
+    <p>If you'd like to slice and dice the data further, you can grab a copy of the raw data from <a href="https://docs.google.com/spreadsheets/d/1b14OfwCeqGdTFtd8rvqxM1rwaj2w9ALW8A7WP0B44wc/edit#gid=0" rel="noopner" target="_blank">this google sheets spreadsheet</a>.</p>
+
+    <p>A few technical notes:</p>
+    <ul>
+        <li>AUM, performance, and yield data is as of Dec. 31, 2018</li>
+        <li>All performance data represents the total return of each fund, net of fees. This means that dividends are assumed to be re-invested back into the fund, and that the management fees have been subtracted</li>
+        <li>The yield percentages shown represent the distributions from the funds over the past 12 months. However, for Invesco funds, the yield % represents the implied annualized yield from the previous month's distribution (as opposed to an entire 12 month period). As such, <b>the yield figures for Invesco funds should be treated as directional at best</b>, given that the distribution for a fund in a single month can diverge significantly from a typical annual average</li>
+    </ul>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="canadianETFDatabaseScript.js"></script>
+
+    &nbsp;
+
+</body>
+
+</html>
